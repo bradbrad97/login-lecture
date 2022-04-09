@@ -2,9 +2,9 @@
 
 class UserStorage {
     static #users = {
-        id: ["taehyun0121"],
-        psword: ["1234"],
-        names: ["김태현"],
+        id: ["taehyun0121", "fkkk" , "adsd"],
+        psword: ["1234", "1234" , "12345"],
+        names: ["김태현", "12345" , "dsfsd"],
     };
 
     static getUsers(...fields) {
@@ -15,7 +15,6 @@ class UserStorage {
             }
             return newUsers;
         }, {});
-        console.log(newUsers);
         return newUsers;
     }
 
@@ -33,10 +32,10 @@ class UserStorage {
 
     static save(userInfo) {
         const users = this.#users;
-        users.id.push((userInfo.id));
-        users.name.push(userInfo.name);
+        users.id.push(userInfo.id);
+        users.names.push(userInfo.name);
         users.psword.push(userInfo.psword);
-        console.log(users);
+        return { success: true };
     }
 }
 
